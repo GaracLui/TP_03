@@ -13,7 +13,7 @@ public class GetObjects : MonoBehaviour
             //AumentasEnergia;
         }
 
-        if (other.CompareTag("Alimento/No Saludable")) // Compara con las etiquetas que hemos agragedo a la lista de Tags
+        if (other.CompareTag("Alimento/No saludable")) // Compara con las etiquetas que hemos agragedo a la lista de Tags
         {
             Destroy(other.gameObject);
             Debug.Log("Mal, asi dañas tu salud"); // Imprime mensaje por pantalla

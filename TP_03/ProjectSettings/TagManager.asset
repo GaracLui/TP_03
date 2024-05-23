@@ -6,8 +6,8 @@ TagManager:
   tags:
   - Alimento
   - Bebida
-  - Alimento/No Saludable
   - Utensilio
+  - Alimento/No saludable
   layers:
   - Default
   - TransparentFX

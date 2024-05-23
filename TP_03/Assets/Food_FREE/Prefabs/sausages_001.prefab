@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1a8ac2d74773764459a79d717ae3ab9f, type: 3}
       propertyPath: m_TagString
-      value: Alimento/No Saludable
+      value: Alimento/No saludable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
