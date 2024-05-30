@@ -5,45 +5,26 @@ using TMPro;
 
 public class Clock : MonoBehaviour
 {
-    public TextMeshProUGUI hours;
-    public TextMeshProUGUI minutes;
-    public TextMeshProUGUI seconds;
+    public TextMeshProUGUI clockText;
+    public float startTime = 60f; // Adjust this to your desired starting time in seconds
 
-    public int timeMultiplier;
+    private float currentTime;
 
-    private float hours_;
-    private float minutes_;
-    private float seconds_;
-    // Start is called before the first frame upda
     void Start()
     {
-        
+        currentTime = startTime;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        seconds_= timeMultiplier * Time.deltaTime;
+        currentTime -= Time.deltaTime;
 
-        seconds.text = seconds_.ToString("00");
-        minutes.text = minutes_.ToString("00");
-        hours.text = hours_.ToString("00");
+        if (currentTime <= 0f)
+        {
+            currentTime = 0f;
+        }
 
-        if (seconds_ > 59)
-        {
-            seconds_ = 0;
-            minutes_++;
-        }
-        if (minutes_ > 59)
-        {
-            minutes_ = 0;
-            hours_++;
-        }
-        if (hours_ > 23)
-        {
-            hours_ = 0;
-            minutes_= 0;
-            seconds_ = 0;
-        }
+        // Format the time string with leading zeros for a consistent display
+        clockText.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(currentTime / 60f), Mathf.FloorToInt(currentTime % 60f));
     }
 }

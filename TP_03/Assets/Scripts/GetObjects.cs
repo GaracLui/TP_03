@@ -37,7 +37,7 @@ public class GetObjects : MonoBehaviour
             foodCount--;
         }
 
-        if (other.CompareTag("Bebidas") && drinksCount < maxDrinks)
+        if (other.CompareTag("Bebida") && drinksCount < maxDrinks)
         {
             Destroy(other.gameObject);
 
