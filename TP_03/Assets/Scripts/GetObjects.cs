@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GetObjects : MonoBehaviour
@@ -12,11 +13,29 @@ public class GetObjects : MonoBehaviour
 
     public TextMeshProUGUI numberFood;
     public TextMeshProUGUI numberDrinks;
+    public TextMeshProUGUI MaxFood;
+    public TextMeshProUGUI MaxDrinks;
 
     private void Update()
     {
         numberFood.text = foodCount.ToString();
         numberDrinks.text = drinksCount.ToString();
+
+        MaxFood.text = maxFood.ToString();
+        MaxDrinks.text = maxDrinks.ToString();
+
+        // Comprueva que consiguio las comidas y bebidas
+        if (drinksCount == maxDrinks && foodCount == maxFood)
+        {
+            if ((SceneManager.GetActiveScene().buildIndex + 1) == 5)
+            {
+                SceneManager.LoadScene("Main_Scene"); // Regresa a Main_Scene
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
 
     }
 
@@ -43,6 +62,8 @@ public class GetObjects : MonoBehaviour
 
             drinksCount++;
         }
+
+        
 
     }
 
