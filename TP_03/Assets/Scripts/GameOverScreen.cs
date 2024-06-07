@@ -7,16 +7,17 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScreen : MonoBehaviour
 {
-    public GameObject gameOver;
+    public GameObject gameOver; 
     public void Setup()
     {
-        gameOver.SetActive(true);
+        gameOver.SetActive(true); // Muestra el GameObject oculto
     }
-    // Start is called before the first frame update
+    
+
     public void RestartButton()
     {
-        // Buelve a cargar el nivel actual
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // Vuelve a cargar el nivel actual
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Obtiene el index de la escena actual
     }
 
     public void MainMenuButton()

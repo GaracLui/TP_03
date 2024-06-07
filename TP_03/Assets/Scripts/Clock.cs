@@ -8,8 +8,9 @@ using UnityEngine.SceneManagement;
 public class Clock : MonoBehaviour
 {
     public TextMeshProUGUI clockText;
-    public GameOverScreen gameOver;
     public float startTime = 60f; // Adjust this to your desired starting time in seconds
+
+    public GameOverScreen gameOver; // Indica que canvas mostrar en caso de que se acabe el tiempo
 
     private float currentTime;
 
@@ -20,17 +21,26 @@ public class Clock : MonoBehaviour
 
     void Update()
     {
-        currentTime -= Time.deltaTime;
+        
 
         // cuan los segundos se acaben
         if (currentTime <= 0f)
         {
-            currentTime = 0f;
-            gameOver.Setup();
+            currentTime = 0f; // los segundos siempre
+            gameOver.Setup(); // Muestra canvas con fin de la partida (GAME OVER)
 
         }
+        else
+        {
+            // Temporizador en reversa
+            currentTime -= Time.deltaTime;
 
-        // Format the time string with leading zeros for a consistent display
-        clockText.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(currentTime / 60f), Mathf.FloorToInt(currentTime % 60f));
+            /* {0:00} -> ("{0}" indica cual de los elementos siguientes mostrar, en este caso el de index 0);
+             * {0:00} -> ("{:00}" indica cuantos digitos mostrar, en este caso solo muestra las decenas y las unidades)
+             */
+            clockText.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(currentTime / 60f), Mathf.FloorToInt(currentTime % 60f));
+        }
+
+        
     }
 }

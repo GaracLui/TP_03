@@ -18,16 +18,19 @@ public class GetObjects : MonoBehaviour
 
     private void Update()
     {
+        // actual cantidad de objetos
         numberFood.text = foodCount.ToString();
         numberDrinks.text = drinksCount.ToString();
 
+        // Maxima cantidad de objetos
         MaxFood.text = maxFood.ToString();
         MaxDrinks.text = maxDrinks.ToString();
 
         // Comprueva que consiguio las comidas y bebidas
         if (drinksCount == maxDrinks && foodCount == maxFood)
         {
-            if ((SceneManager.GetActiveScene().buildIndex + 1) == 5)
+            // comprueva si esta en el ultimo nivel
+            if ((SceneManager.GetActiveScene().buildIndex) == 4)
             {
                 SceneManager.LoadScene("Main_Scene"); // Regresa a Main_Scene
             }
