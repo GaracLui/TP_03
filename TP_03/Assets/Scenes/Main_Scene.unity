@@ -515,7 +515,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 996597747}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.66666675
+  m_Size: 0.6666667
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -656,17 +656,23 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Objetivo:
+  m_text: 'Objetive:
 
+    
 
-    Obten los Alimento y Bebidas antes de que se acabe el
-    tiempo.
+    Get the Healthy Foods and Drinks before time runs
+    out.
 
+    Be careful with Unhealthy Foods.
 
-    Controles:
+    
 
+    Controls:
 
-    Flechas del teclado.'
+    
+
+    Keyboard
+    arrows to move.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -729,7 +735,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 11.4307785, y: -124.39095, z: 3.8101962, w: -22.852161}
+  m_margin: {x: 17.003143, y: -119.20077, z: 17.741135, w: -14.857014}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

@@ -14,6 +14,8 @@ public class Clock : MonoBehaviour
 
     private float currentTime;
 
+    public float CurrentTime { get => currentTime; set => currentTime = value; }
+
     void Start()
     {
         currentTime = startTime;
@@ -26,7 +28,8 @@ public class Clock : MonoBehaviour
         // cuan los segundos se acaben
         if (currentTime <= 0f)
         {
-            currentTime = 0f; // los segundos siempre
+            currentTime = 0f; // los segundos siempre estaran en 0
+            clockText.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(currentTime / 60f), Mathf.FloorToInt(currentTime % 60f));
             gameOver.Setup(); // Muestra canvas con fin de la partida (GAME OVER)
 
         }

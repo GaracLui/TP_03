@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -10,19 +11,24 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
 
+    public Clock clock;
+
     private float x, y;
 
     // Update is called once per frame
     void Update()
     {
-        x = Input.GetAxis("Horizontal");
-        y = Input.GetAxis("Vertical");
+        // Si no se acabo el tiempo
+        if (!(clock.CurrentTime <= 0))
+        {
+            x = Input.GetAxis("Horizontal");
+            y = Input.GetAxis("Vertical");
 
-        transform.Rotate(0, x * Time.deltaTime * rotationSpeed, 0);
-        transform.Translate(0, 0, y * Time.deltaTime * runSpeed);
+            transform.Rotate(0, x * Time.deltaTime * rotationSpeed, 0);
+            transform.Translate(0, 0, y * Time.deltaTime * runSpeed);
 
-        animator.SetFloat("VelX", x);
-        animator.SetFloat("VelY", y);
-
+            animator.SetFloat("VelX", x);
+            animator.SetFloat("VelY", y);
+        }
     }
 }
