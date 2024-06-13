@@ -30,7 +30,7 @@ public class GetObjects : MonoBehaviour
         if (drinksCount == maxDrinks && foodCount == maxFood)
         {
             // comprueva si esta en el ultimo nivel
-            if ((SceneManager.GetActiveScene().buildIndex) == 4)
+            if ((SceneManager.GetActiveScene().buildIndex) == 3)
             {
                 SceneManager.LoadScene("Main_Scene"); // Regresa a Main_Scene
             }
